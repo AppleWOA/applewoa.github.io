@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
-    <title>Status - Lumia WOA Project</title>
+    <title>Status - AppleWOA Project</title>
     <link rel="stylesheet"
           href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
     <link rel="stylesheet" href="https://woa-project.github.io/LumiaWOA/css/raster.grid.css" />
@@ -52,6 +52,9 @@
             <li>
                 <a href="#versions-support">Windows Versions Supported</a>
             </li>
+            <li>
+                <a href="/m1.html">Apple M1 Support</a>
+            </li>
         </ul>
 
         <div class="hero-sect grey main-breakout" style="margin-bottom: 4rem;">
@@ -91,62 +94,16 @@
                     <td>Core System Bringup <span class="badge">UEFI</span></td>
                     <td class="text-right">All Devices</td>
                 </tr>
-            </tbody>
-        </table>
-        <r-grid columns=2 style="padding: 0">
-            <r-cell>
-                <h3 style="margin: 0;">M1 Mac Mini<span class="codename">J274</span></h3>
-            </r-cell>
-            <r-cell class="vertical-center">
-                <h5 class="text-right" style="margin: 0;">23%</h5>
-            </r-cell>
-        </r-grid>
-        <!--
-        template for description:
-        <tr>
-        <td>Thing</td>
-        <td>Description</td>
-        <td class="text-right">Working status</td>
-        <td>
-            <span class="state working"><i class="ms-Icon ms-Icon--CheckMark" aria-hidden="true"></i></span>
-        </td>
-    </tr> -->
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100"
-                 style="width: 23%; top: -13px">
-                <span class="sr-only">23%</span>
-            </div>
-        </div>
-        <table>
-            <thead>
                 <tr>
-                    <th>Feature</th>
-                    <th>Description</th>
-                    <th colspan="2" class="text-right">Working state</th>
+                    <td>USB Input <span class="badge"> Windows PE</span></td>
+                    <td class="text-right">All Devices</td>
                 </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Soc Cores</td>
-                <td>All 8 (Firestorm and Icestorm) Cores.</td>
-                <td class="text-right">Partially working (only one CPU works for now)</td>
-                <td>
-                    <td>
-                        <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
-                    </td>
-            </tr>
-            <tr>
-                <td>NVMe</td>
-                <td>Apple NVMe Storage 2/3</td>
-                <td class="text-right">Not working</td>
-                <td>
-                    <td>
-                        <span class="state error"><i class="ms-Icon ms-Icon--Blocked" aria-hidden="true"></i></span>
-                    </td>
-            </tr>
+                <tr>
+                    <td>Apple NAND Storage 2 <span class="badge">UEFI & Windows PE</span></td>
+                    <td class="text-right">All Devices</td>
+                </tr>
             </tbody>
         </table>
-        </div>
 
         <h2 id="versions-support">Windows versions supported</h2>
         <div class="table-responsive">
