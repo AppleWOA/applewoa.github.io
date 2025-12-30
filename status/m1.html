@@ -141,17 +141,17 @@
             </thead>
             <tbody>
             <tr>
-                <td>Soc Cores</td>
-                <td>All 8 (Firestorm and Icestorm) Cores</td>
-                <td class="text-right">Partially working (only one CPU works for now)</td>
+                <td>SoC CPU cores</td>
+                <td>Firestorm/Icestorm clusters</td>
+                <td class="text-right">Partially working (SMP still a tad bit fragile)</td>
                 <td>
                     <td>
                         <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
                     </td>
             </tr>
             <tr>
-                <td>Devicetree</td>
-                <td>Apple's DeviceTree system support</td>
+                <td>DeviceTree</td>
+                <td>Apple DeviceTree parsing (for UEFI specifically)</td>
                 <td class="text-right">Mostly working</td>
                 <td>
                     <td>
@@ -160,8 +160,8 @@
             </tr>
             <tr>
                 <td>AIC</td>
-                <td>Apple Interupt Controller</td>
-                <td class="text-right">We use a virtual GIC for now</td>
+                <td>Apple Interrupt Controller</td>
+                <td class="text-right">UEFI driver works, Windows HAL Extension needs more work</td>
                 <td>
                     <td>
                         <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
@@ -169,17 +169,17 @@
             </tr>
             <tr>
                 <td>NVMe</td>
-                <td>Apple NVMe Storage 2/3</td>
-                <td class="text-right">Not working</td>
+                <td>Apple NVMe Storage coprocessor and onboard storage</td>
+                <td class="text-right">In progress</td>
                 <td>
                     <td>
-                        <span class="state error"><i class="ms-Icon ms-Icon--Blocked" aria-hidden="true"></i></span>
+                        <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
                     </td>
             </tr>
             <tr>
                 <td>Thunderbolt</td>
                 <td>Thunderbolt 3</td>
-                <td class="text-right">Not working</td>
+                <td class="text-right">Not working (pending Apple Type-C bringup)</td>
                 <td>
                     <td>
                         <span class="state error"><i class="ms-Icon ms-Icon--Blocked" aria-hidden="true"></i></span>
@@ -188,7 +188,7 @@
             <tr>
                 <td>DP Alt Mode</td>
                 <td>USB-C DisplayPort out</td>
-                <td class="text-right">Not working</td>
+                <td class="text-right">Not working (pending Apple Type-C bringup)</td>
                 <td>
                     <td>
                         <span class="state error"><i class="ms-Icon ms-Icon--Blocked" aria-hidden="true"></i></span>
@@ -204,9 +204,9 @@
                     </td>
             </tr>
             <tr>
-                <td>Display output</td>
-                <td>Display output (controled by DCP)</td>
-                <td class="text-right">Partially working (we're using iBoot framebuffer)</td>
+                <td>Display Controller</td>
+                <td>Display output/DCP control</td>
+                <td class="text-right">Partially working (we're using iBoot's framebuffer)</td>
                 <td>
                     <td>
                         <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
@@ -214,26 +214,35 @@
             </tr>
             <tr>
                 <td>SEP</td>
-                <td>Apple's Secure Enclave - we plan to use this for TPM</td>
-                <td class="text-right">Not working</td>
+                <td>Secure Enclave</td>
+                <td class="text-right">Not needed for now - optional</td>
+                <td>
+                    <td>
+                        <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
+                    </td>
+            </tr>
+            <tr>
+                <td>PCIe</td>
+                <td>Apple PCIe Complex</td>
+                <td class="text-right">Not working (pending DART bringup)</td>
                 <td>
                     <td>
                         <span class="state error"><i class="ms-Icon ms-Icon--Blocked" aria-hidden="true"></i></span>
                     </td>
             </tr>
             <tr>
-                <td>Audio</td>
-                <td>No drivers yet</td>
-                <td class="text-right">Not working</td>
+                <td>DART</td>
+                <td>Apple's IOMMU</td>
+                <td class="text-right">In progress</td>
                 <td>
                     <td>
-                        <span class="state error"><i class="ms-Icon ms-Icon--Blocked" aria-hidden="true"></i></span>
+                        <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
                     </td>
             </tr>
             <tr>
                 <td>Wifi + Bluetooth</td>
-                <td>No drivers yet</td>
-                <td class="text-right">Not working</td>
+                <td>Wi-Fi/Bluetooth chipsets</td>
+                <td class="text-right">Not working (contingent on PCIe bringup)</td>
                 <td>
                     <td>
                         <span class="state error"><i class="ms-Icon ms-Icon--Blocked" aria-hidden="true"></i></span>
@@ -267,27 +276,27 @@
             </thead>
             <tbody>
             <tr>
-                <td>Soc Cores</td>
-                <td>All 8-20 (Firestorm and Icestorm) Cores</td>
-                <td class="text-right">Untested</td>
+                <td>SoC Cores</td>
+                <td>Firestorm/Icestorm clusters (including multi-die)</td>
+                <td class="text-right">Should work, multi-die not fully tested</td>
                 <td>
                     <td>
                         <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
                     </td>
             </tr>
             <tr>
-                <td>Devicetree</td>
-                <td>Apple's DeviceTree system support</td>
-                <td class="text-right">WIP</td>
+                <td>DeviceTree</td>
+                <td>Apple DeviceTree parsing (for UEFI specifically)</td>
+                <td class="text-right">Mostly working</td>
                 <td>
                     <td>
-                        <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
+                        <span class="state working"><i class="ms-Icon ms-Icon--CheckMark" aria-hidden="true"></i></span>
                     </td>
             </tr>
             <tr>
                 <td>AIC</td>
-                <td>Apple Interupt Controller</td>
-                <td class="text-right">We use a virtual GIC for now</td>
+                <td>Apple Interrupt Controller</td>
+                <td class="text-right">UEFI driver works, Windows HAL Extension needs more work</td>
                 <td>
                     <td>
                         <span class="state warning"><i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i></span>
